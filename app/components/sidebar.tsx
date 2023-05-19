@@ -122,7 +122,8 @@ export function SideBar(props: { className?: string }) {
         <div className={styles["sidebar-title"]}>Yoolo-AI</div>
         <div className={styles["sidebar-sub-title"]}>
           {/* Build your own AI assistant.  */}
-          构建你自己的AI助手,仅供学习使用。 出自YOULU.DCG
+          构建你自己的AI助手，仅供学习使用。
+          <div className={styles["sidebar-icon"]}> 出自YOULU.DCG</div>
         </div>
         <div className={styles["sidebar-logo"] + " no-dark"}>
           <ChatGptIcon />
