@@ -4,6 +4,7 @@ import styles from "./home.module.scss";
 
 import { IconButton } from "./button";
 import SettingsIcon from "../icons/settings.svg";
+import WxMpIcon from "../icons/wxmp.svg";
 import GithubIcon from "../icons/github.svg";
 import ChatGptIcon from "../icons/chatgpt.svg";
 import AddIcon from "../icons/add.svg";
@@ -119,7 +120,7 @@ export function SideBar(props: { className?: string }) {
       }`}
     >
       <div className={styles["sidebar-header"]}>
-        <div className={styles["sidebar-title"]}>Yoolo-AI</div>
+        <div className={styles["sidebar-title"]}>YOOLO-AI</div>
         <div className={styles["sidebar-sub-title"]}>
           {/* Build your own AI assistant.  */}
           构建你自己的AI助手，仅供学习使用。
@@ -176,6 +177,13 @@ export function SideBar(props: { className?: string }) {
             </Link>
           </div>
           <div className={styles["sidebar-action"]}>
+            {/* <IconButton icon={<WxMpIcon />} 
+              onClick={() => {
+                
+              // 帮我在click函数中增加点击图片后显示
+
+              }}
+          shadow /> */}
             <a href={REPO_URL} target="_blank">
               <IconButton icon={<GithubIcon />} shadow />
             </a>
