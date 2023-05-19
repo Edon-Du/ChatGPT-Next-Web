@@ -63,6 +63,14 @@
   }
 }
 
+.sidebar-icon{
+  font-size: 12px;
+  font-weight: 400px;
+  animation: slide-in ease 0.3s;
+  position: absolute;
+  margin-left: 150px;
+}
+
 .sidebar-drag {
   $width: 10px;
 
