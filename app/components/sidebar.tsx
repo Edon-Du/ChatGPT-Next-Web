@@ -5,6 +5,7 @@ import styles from "./home.module.scss";
 import { IconButton } from "./button";
 import SettingsIcon from "../icons/settings.svg";
 import WxMpIcon from "../icons/wxmp.svg";
+import WxMpBlackIcon from "../icons/wxmp_black.svg";
 import GithubIcon from "../icons/github.svg";
 import ChatGptIcon from "../icons/chatgpt.svg";
 import AddIcon from "../icons/add.svg";
@@ -15,6 +16,7 @@ import PluginIcon from "../icons/plugin.svg";
 import Locale from "../locales";
 
 import { useAppConfig, useChatStore } from "../store";
+import React, { useState } from "react";
 
 import {
   MAX_SIDEBAR_WIDTH,
@@ -113,6 +115,17 @@ export function SideBar(props: { className?: string }) {
 
   useHotKey();
 
+  const [showTooltip, setShowTooltip] = useState(false);
+
+  const handleShowTooltip = () => {
+    showToast(Locale.WIP);
+    // if(showTooltip) {
+    //   setShowTooltip(false)
+    // } else {
+    //   setShowTooltip(true);
+    // }
+  };
+
   return (
     <div
       className={`${styles.sidebar} ${props.className} ${
@@ -177,16 +190,32 @@ export function SideBar(props: { className?: string }) {
             </Link>
           </div>
           <div className={styles["sidebar-action"]}>
-            {/* <IconButton icon={<WxMpIcon />} 
-              onClick={() => {
-                
-              // 帮我在click函数中增加点击图片后显示
-
-              }}
-          shadow /> */}
-            <a href={REPO_URL} target="_blank">
-              <IconButton icon={<GithubIcon />} shadow />
-            </a>
+            <IconButton
+              icon={<WxMpBlackIcon />}
+              onClick={handleShowTooltip}
+              shadow
+            />
+            {showTooltip && (
+              <div
+                style={{
+                  position: "fixed",
+                  left: "10%",
+                  top: "50%",
+                  transform: "translateX(-50%)",
+                  zIndex: "9999",
+                  boxShadow: "0 0 4px rgba(0, 0, 0, 0.2)",
+                }}
+              >
+                <div
+                  style={{
+                    backgroundImage: "url('/qrcode_mp258_258.jpg')",
+                    backgroundSize: "cover",
+                    width: "258px",
+                    height: "258px",
+                  }}
+                ></div>
+              </div>
+            )}
           </div>
         </div>
         <div>
