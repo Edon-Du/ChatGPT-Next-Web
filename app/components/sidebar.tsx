@@ -116,12 +116,12 @@ export function SideBar(props: { className?: string }) {
   const [showTooltip, setShowTooltip] = useState(false);
 
   const handleShowTooltip = () => {
-    showToast(Locale.WIP);
-    // if(showTooltip) {
-    //   setShowTooltip(false)
-    // } else {
-    //   setShowTooltip(true);
-    // }
+    // showToast(Locale.WIP);
+    if (showTooltip) {
+      setShowTooltip(false);
+    } else {
+      setShowTooltip(true);
+    }
   };
 
   return (
